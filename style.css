@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- NEW: FONT IMPORTS AND CSS VARIABLES --- */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@300&family=Reenie+Beanie&display=swap");
+
+:root {
+  --primary-font: 'Playfair Display', serif;
+  --secondary-font: 'Open Sans', sans-serif;
+  --logo-font: 'Reenie Beanie', cursive;
+
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --accent-color: #90c3c8;
+  --dark-bg: #2d2d2d;
+  --light-text: #f0f0f0;
+}
+
+/* --- NEW: FADE-IN ANIMATION --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Basic */
+body {
+  background-color: var(--accent-color);
+  margin: 1rem;
+}
+
+.wrapper-container {
+  background: var(--background-color);
+}
+
+html {
+  font-family: var(--secondary-font);
+  color: var(--text-color);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 5rem;
+}
+
+nav ul {
+  margin-left: 5rem;
+  list-style: none;
+}
+
+/* --- UPDATED: Logo Styling --- */
+li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-family: var(--logo-font); /* Using the script font */
+  font-size: 3rem; /* Making it larger */
+}
+
+nav .burger {
+  margin-right: 5rem;
+  cursor: pointer;
+}
+
+nav .burger span {
+  display: block; /* Makes margin work correctly */
+  height: 4px;
+  width: 25px; /* Added width */
+  border: 2px solid var(--text-color);
+  margin: 4px;
+  background: var(--text-color);
+}
+
+/* Header */
+header {
+  margin: 6rem;
+  animation: fadeInUp 1s ease-out; /* Added animation */
+}
+
+.main-headings {
+  width: 60%;
+  font-size: 4rem; /* Slightly increased size */
+  font-family: var(--primary-font); /* Using elegant serif font */
+}
+
+.primary-headings {
+  width: 50%;
+  margin-top: 2rem;
+  font-size: 1.25rem; /* Adjusted size */
+  line-height: 1.8; /* Improved readability */
+}
+
+.bg-gray {
+  background: var(--dark-bg);
+  color: var(--light-text);
+  padding: 4px 12px;
+  font-weight: bold;
+}
+/* Header End */
+
+/* Main Start */
+main {
+  margin: 0 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* NEW: better spacing than margin */
+  animation: fadeInUp 1s ease-out 0.2s; /* Added animation with delay */
+  animation-fill-mode: backwards;
+}
+
+/* --- UPDATED: Image Styling with Hover Effect --- */
+main .img {
+  width: 40%;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease; /* Smooth transition */
+}
+
+main .img:hover {
+  transform: scale(1.03); /* Zoom in slightly */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Add depth */
+}
+
+/* SECTION THREE START */
+.section-three {
+  margin-left: 5rem;
+  margin-top: 8rem; /* Added margin-top for spacing */
+  animation: fadeInUp 1s ease-out 0.4s; /* Added animation with delay */
+  animation-fill-mode: backwards;
+}
+
+.section-three .primary-headings {
+  margin-bottom: 5rem; /* Reduced margin */
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-three .item h1 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-left: 1rem;
+  font-family: var(--primary-font);
+}
+
+/* --- UPDATED: Image Styling with Hover Effect --- */
+.section-three .item img {
+  width: 400px;
+  height: 500px;
+  margin: 50px;
+  object-fit: cover; /* NEW: Prevents image stretching */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
+}
+
+.section-three .item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+/* SECTION THREE END */
+
+/* FOOTER START */
+/* --- UPDATED: Footer sizing and styling --- */
+footer {
+  margin-top: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start; /* Aligned items to top */
+  padding: 5rem 2rem; /* Replaced fixed height with padding */
+  color: var(--light-text);
+  background: var(--accent-color);
+}
+
+footer .logo-container h1 {
+  font-size: 4rem;
+  font-family: var(--logo-font);
+  margin-bottom: 20px;
+}
+
+footer .logo-container p {
+  max-width: 400px;
+  font-family: var(--secondary-font);
+  line-height: 25px;
+}
+
+footer .about-company {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /* NEW: for better spacing */
+}
+
+footer .about-company .container {
+  margin-top: 20px;
+}
+
+.about-company .container h1 {
+  font-family: var(--primary-font);
+  margin-bottom: 30px;
+}
+
+.about-company .container p {
+  font-family: var(--secondary-font);
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 740px) {
+  header, main, .section-three {
+    margin: 2rem; /* Simplified responsive margins */
+  }
+
+  header .main-headings,
+  header .primary-headings,
+  .section-three .main-headings,
+  .section-three .primary-headings {
+    width: 100%;
+  }
+  
+  main .img {
+      width: 90%; /* Larger images on mobile */
+  }
+
+  .section-three img {
+    margin: 20px 0; /* Adjusted mobile margin */
+  }
+}
